@@ -31,7 +31,8 @@ export default class resolverApp extends App {
     searchengine: "cool-searchengine",
     manual: "cool-resolve",
     consent: "cool-consent",
-    arJwk: "cool-arJwk"
+    arJwk: "cool-arJwk",
+    favorites: "cool-favorites"
   };
 
   componentDidMount = async () => {
@@ -158,6 +159,7 @@ export default class resolverApp extends App {
   randBg = () => parseInt(Math.floor(Math.random() * numberOfBackgrounds));
 
   getFavorites() {
+    if (typeof window === "undefined") return [];
     const favorites = localStorage.getItem(this.store_id.favorites) || null;
     return favorites ? favorites.split(/,/) : [];
   };
@@ -179,6 +181,7 @@ export default class resolverApp extends App {
           native: this.state.native,
           searchengine: this.state.searchengine,
           backgroundSelection: this.state.bg,
+          favorites: this.getFavorites(),
           rememberVisited: this.rememberVisited, 
           forgetVisited: this.forgetVisited,
           deleteHistory: this.deleteHistory,

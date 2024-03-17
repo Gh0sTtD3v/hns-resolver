@@ -17,7 +17,11 @@ const Nav = () => {
 	};
 	return (
 		<nav id="__nav">
-			<Logo text={`Handshake`} />
+			<Link href="/">
+				<a>
+					<Logo text={`Handshake`} />
+				</a>
+			</Link>
 			<Resolver />
 			<div className={[styles.Menu__container].join(` `)}>
 				<span
@@ -48,7 +52,7 @@ const Nav = () => {
 							<span className={[styles.Menu__option_icon].join(` `)}>
 								{/* <Image width={16} height={16} alt="icon <description_here>" src={hns_logo} /> */}
 							</span>
-							<Link href="/configure">
+							<Link href="/settings">
 								<a className={[styles.Menu__option_text].join(` `)}>
 									Settings
 								</a>

@@ -1,4 +1,8 @@
+import { useEffect, useState, useContext } from "react";
+import UserContext from "../context/User";
+import Typed from "typed.js";
 import Visited from "./Visited";
+import Favorites from "./Favorites";
 import Lenks from "./Lenks";
 import { useScreensize } from "../../hooks";
 import { Clock, Hns, Exchange, Vavo } from "./Widgets";
@@ -14,6 +18,8 @@ const Section = ({ children }) => (
 const Home = props => {
 	const { w } = useScreensize();
 	
+	// const { native } = useContext(UserContext);
+
 	const widgets = [
 		<Clock 
 			key={`widget-0`} 
@@ -31,6 +37,28 @@ const Home = props => {
 
 	const mobileWidgets = widgets;
 
+	useEffect(() => {
+		const strings = w <= 1260 ? [
+			"",
+		] : [
+			"Wake up, ..",
+			native ? "A Handshake resolver has been detected.." : "The Matrix has you..",
+			"Follow the white rabbit..",
+		];
+
+		const typed = new Typed("#typed", {
+			strings: strings,
+			typeSpeed: 50,
+			backSpeed: 80,
+			smartBackspace: true,
+			loop: true,
+		});
+
+		return () => {
+			typed.destroy();
+		};
+	}, [props.native]);
+
 	return(<>
 		<header className={styles.header}>
 			<h1>
@@ -40,9 +68,7 @@ const Home = props => {
 		<div className={[styles.Desktop__container]}>
 			<main className={styles.main}>
 				<div className={[styles.System__interface]}>
-					<span>
-						{`Welcome to HNS Resolver.. Follow the white rabbit 🐇.. `}
-					</span>
+					<span id="typed"></span>
 					<span>
 						
 					</span>
@@ -52,6 +78,9 @@ const Home = props => {
 				</Section>
 				<Section>
 					<Visited />
+				</Section>
+				<Section>
+					<Favorites />
 				</Section>
 				<Section>
 					<Lenks

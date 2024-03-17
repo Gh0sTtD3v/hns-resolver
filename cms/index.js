@@ -24,6 +24,66 @@ const CMS = {
 		IMAGE: `/cutout.png`
 	},
 	CONTENT: {
+		ART: {
+			TITLE: `Descriptions Moon Art`,
+			DESC: `Some desc...`,
+			HEADER: pointerLogo(),
+			ARTWORKS: [
+				{
+					name: `Artwork 1`,
+					image: `/artwork1.png`,
+					description: "Artwork description",
+					museum: "MoonMars Museum",
+					artist_name: "Houston Vandergriff",
+					country: "US",
+					social_media: {
+						twitter_handle: "@DownsAndTowns",
+						instagram_handle: "@DownsAndTowns",
+					},
+					website: "www.downsandtowns.com",
+					artwork_title: "Trilogy",
+					artwork_description: `
+						Trilogy: three windows representing three chromosomes. A girl in the window looking
+						to the sea and sky representing humanity planning for the future and imagining
+						distant destinations. We were visiting Novigrad, Croatia for the day – wandering
+						cobblestone streets, taking photos of boats in the harbor, ancient buildings, and all
+						else we could find. Down one narrow road, we stumbled upon this pavilion on the edge
+						of the Adriatic Sea. We took turns modeling in the windows. I took this photo of
+					`,
+					bio: `
+						Houston Vandergriff is an award-winning travel photographer, content creator, and 
+						influencer rocking an extra 21st chromosome. Based in Knoxville, Tennessee Houston 
+						has traveled to 26 countries and 49 of the 50 United States. His camera opens doors 
+						around the world and helps build relationships around three pillars of travel, 
+						photography, and advocacy - and the magic that happens when you combine all three.
+					`,
+				},
+				{
+					name: `Artwork 2`,
+					image: `/artwork2.png`,
+					description: "Artwork description",
+					museum: "MoonMars Museum",
+					artist_name: "Houston Vandergriff",
+					country: "US",
+					social_media: {
+						twitter_handle: "@DownsAndTowns",
+						instagram_handle: "@DownsAndTowns",
+					},
+					website: "www.downsandtowns.com",
+					artwork_title: "Trilogy",
+					artwork_description: `
+						Trilogy: three windows representing three chromosomes. A ..
+					`,
+					bio: `
+						Houston Vandergriff is an award-winning travel photographer, content creator, and 
+						influencer rocking an extra 21st chromosome. Based in Knoxville, Tennessee Houston 
+						has traveled to 26 countries and 49 of the 50 United States. His camera opens doors 
+						around the world and helps build relationships around three pillars of travel, 
+						photography, and advocacy - and the magic that happens when you combine all three.
+					`,
+				},
+			],
+		},
 		HOME: {
 			TITLE: pointerLogo(),
 			DESC: "Browse the web using handshakenames",
@@ -116,6 +176,7 @@ const CMS = {
 			],
 		},
 	},
+	
 	FOOTER: {
 		DIRECTORS: [
 			{
