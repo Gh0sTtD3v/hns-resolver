@@ -23,33 +23,36 @@ const Quote = ({ token, value, i }) => typeof value === "number" ? (
 ) : "";
 
 const Exchange = () => {
-    const [asvt, setAsvt] = useState(0);
+    // const [asvt, setAsvt] = useState(0);
     const [quotes, setQuotes] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setLoading(true);
-        const getAsvtquote = async () => {
-            const data = await Hsd.getAsvt();
-            setAsvt(await data);
-        };
+    // useEffect(() => {
+    //     setLoading(true);
+    //     const getAsvtquote = async () => {
+    //         const data = await Hsd.getAsvt();
+    //         setAsvt(await data);
+    //     };
 
-        if (typeof window !== "undefined")
-            getAsvtquote();
+    //     if (typeof window !== "undefined")
+    //         getAsvtquote();
 
-    }, []);
+    // }, []);
 
     useEffect(() => {
         const getExchangedata = async () => {
             const data = await Hsd.getQuotes();
             const json = await data;
-            const all = ["asvt", ...Object.keys(json)];
+            const all = [
+                // "asvt", 
+                ...Object.keys(json)
+            ];
             setQuotes([]);
             all.forEach((key,i) => {
                 const token = key.replace("-network", "");
-                if (token === "asvt")
-                    setQuotes(prev => [...prev, <Quote key={i} i={i} token={token} value={asvt} />]);
-                else
+                // if (token === "asvt")
+                //     setQuotes(prev => [...prev, <Quote key={i} i={i} token={token} value={asvt} />]);
+                // else
                     setQuotes(prev => [...prev, <Quote key={i} i={i} token={token.replace("-network", "")} value={json[key].usd} />]);
             });
             setLoading(false);
