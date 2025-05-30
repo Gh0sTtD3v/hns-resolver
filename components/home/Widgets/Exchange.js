@@ -47,7 +47,7 @@ const Exchange = () => {
                 // "asvt", 
                 ...Object.keys(json)
             ];
-            
+
             setQuotes([]);
             all.forEach((key,i) => {
                 const token = key.replace("-network", "");
@@ -60,7 +60,7 @@ const Exchange = () => {
         };
 
         if (typeof window !== "undefined"
-            && asvt > 0 
+            // && asvt > 0 
         )
             getExchangedata();
 
