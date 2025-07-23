@@ -68,7 +68,7 @@ export default class resolverApp extends App {
 
   checkResolver = async () => {
     try { 
-      const res = await fetch("https://hnschat/favicon.ico", {});
+      const res = await fetch("https://nathan.woodburn/favicon.ico", {});
       console.log(res);
       this.setState({
         ...this.state,
