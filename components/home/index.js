@@ -18,7 +18,7 @@ const Section = ({ children }) => (
 const Home = props => {
 	const { w } = useScreensize();
 	
-	// const { native } = useContext(UserContext);
+	const { native } = useContext(UserContext);
 
 	const widgets = [
 		<Clock 
@@ -27,9 +27,9 @@ const Home = props => {
 		<Hns 
 			key={`widget-1`}
 		/>,
-		<Exchange
-			key={`widget-3`}
-		/>,
+		// <Exchange
+		// 	key={`widget-3`}
+		// />,
 		<Vavo
 			key={`widget-4`}
 		/>
@@ -57,7 +57,8 @@ const Home = props => {
 		return () => {
 			typed.destroy();
 		};
-	}, [props.native]);
+
+	}, [native]);
 
 	return(<>
 		<header className={styles.header}>
